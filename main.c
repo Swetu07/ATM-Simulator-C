@@ -1,41 +1,41 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include "account.h"
 
 int main()
 {
     int choice;
 
-    do
+    while (1)
     {
-        printf("\n====================================\n");
-        printf("        ATM SIMULATOR\n");
-        printf("====================================\n");
-
+        printf("\n=========================================\n");
+        printf("         ATM SIMULATOR SYSTEM\n");
+        printf("=========================================\n");
         printf("1. Create Account\n");
         printf("2. Login\n");
         printf("3. Exit\n");
-
-        printf("\nEnter your choice: ");
+        printf("-----------------------------------------\n");
+        printf("Enter your choice: ");
         scanf("%d", &choice);
 
-        switch(choice)
+        switch (choice)
         {
             case 1:
-                printf("\nCreate Account Selected.\n");
+                createAccount();
                 break;
 
             case 2:
-                printf("\nLogin Selected.\n");
+                login();
                 break;
 
             case 3:
                 printf("\nThank you for using ATM Simulator!\n");
-                break;
+                exit(0);
 
             default:
-                printf("\nInvalid Choice! Please try again.\n");
+                printf("\nInvalid Choice! Try Again.\n");
         }
-
-    } while(choice != 3);
+    }
 
     return 0;
 }
